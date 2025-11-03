@@ -1,0 +1,255 @@
+/* --- CSS Custom Variables (Skema Warna Tema RUIN) --- */
+:root {
+    --color-dark-primary: #050310;   /* Background sangat gelap (ungu/biru tua) */
+    --color-dark-secondary: #1a1a2e; /* Background kartu/panel */
+    --color-neon-pink: #E0007A;      /* Aksen utama (Roxanne) */
+    --color-neon-cyan: #00DFFC;      /* Aksen kedua (Chica/Glitch) */
+    --color-text-light: #EAEAEA;     /* Teks utama */
+    --color-text-muted: #888;        /* Teks abu-abu */
+}
+
+/* --- Global Reset & Body Styling --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-dark-primary);
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: rgba(10, 5, 26, 0.8); /* Background gelap transparan */
+    backdrop-filter: blur(10px); /* Efek 'frost' */
+    border-bottom: 1px solid var(--color-neon-pink);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    color: var(--color-neon-pink);
+    text-shadow: 0 0 10px var(--color-neon-pink); /* Efek neon glow */
+    font-weight: 800;
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav li {
+    margin-left: 25px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--color-neon-cyan);
+    text-shadow: 0 0 5px var(--color-neon-cyan);
+}
+
+/* --- Hero Section --- */
+#hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    
+    /* GANTI GAMBAR INI dengan gambar latar 'Ruin' Anda di folder /images */
+    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    
+    /* Overlay gelap agar teks terbaca */
+    box-shadow: inset 0 0 0 2000px rgba(10, 5, 26, 0.6); 
+}
+
+/* Styling untuk video (jika Anda memilih menggunakannya) */
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+#hero .hero-content {
+    z-index: 2;
+    max-width: 700px;
+}
+
+#hero h2 {
+    font-size: 3.5rem;
+    color: var(--color-neon-pink);
+    text-shadow: 0 0 15px var(--color-neon-pink);
+}
+
+#hero p {
+    font-size: 1.3rem;
+    color: var(--color-neon-cyan);
+    margin-bottom: 30px;
+}
+
+/* --- Tombol (CTA dan Umum) --- */
+.cta-button, .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.cta-button {
+    background-color: var(--color-neon-pink);
+    color: var(--color-dark-primary);
+}
+
+.cta-button:hover {
+    background-color: var(--color-neon-cyan);
+    color: var(--color-dark-primary);
+    box-shadow: 0 0 20px var(--color-neon-cyan);
+    transform: translateY(-3px);
+}
+
+/* --- Products Section --- */
+#products, #about {
+    padding: 80px 0;
+}
+
+#products h2, #about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-neon-cyan);
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px var(--color-neon-cyan);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-item {
+    background: var(--color-dark-secondary);
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px var(--color-neon-pink);
+    border-color: var(--color-neon-pink);
+}
+
+.product-item img {
+    width: 100%;
+    height: 300px; /* Tinggi gambar seragam */
+    object-fit: cover; /* Memastikan gambar pas */
+    display: block;
+}
+
+.product-item h3 {
+    font-size: 1.4rem;
+    margin: 20px 15px 10px 15px;
+    color: var(--color-text-light);
+}
+
+.product-item .price {
+    font-size: 1.2rem;
+    color: var(--color-neon-cyan);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.product-item .btn {
+    background: var(--color-neon-cyan);
+    color: var(--color-dark-primary);
+    margin-bottom: 20px;
+}
+
+.product-item .btn:hover {
+    background: var(--color-neon-pink);
+}
+
+/* --- About Section --- */
+#about {
+    background-color: var(--color-dark-secondary);
+    text-align: center;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 40px 0;
+    border-top: 2px solid var(--color-neon-pink);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: var(--color-neon-cyan);
+}
